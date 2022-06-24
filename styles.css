@@ -1,0 +1,244 @@
+body,
+html {
+  margin: 0;
+  background-color: rgb(165, 164, 176);
+}
+a {
+  text-decoration: none;
+  color: rgb(45, 45, 45);
+  display: block;
+  position: relative;
+  padding: 2px;
+}
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: rgb(0, 255, 234);
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translate3d(-100%, 0, 0);
+}
+a:hover::after,
+a:focus::after {
+  opacity: 1;
+  color: rgb(17, 86, 92);
+  transform: translate3d(0, 0, 0);
+}
+
+/* navigation */
+
+nav {
+  height: 65px;
+  position: fixed;
+  top: -100%;
+  width: 100vw;
+  z-index: 1;
+  box-shadow: 0px 0px 8px rgb(55, 55, 55);
+  background-color: rgba(165, 164, 176, 0.9);
+  transition: all 0.4s;
+}
+
+nav.active {
+  top: 0;
+  transition: all 0.4s;
+}
+
+nav > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 30%;
+  color: rgb(0, 0, 0);
+  font-family: "Work Sans";
+}
+nav > ul > li {
+  cursor: pointer;
+  font-size: larger;
+  color: black;
+}
+
+/* home page */
+
+.home-page {
+  margin: 0;
+  height: 0;
+  width: 0;
+  border-left: 50vw solid rgb(48, 48, 78);
+  border-bottom: 50vh solid rgb(181, 181, 181);
+  border-top: 50vh solid rgb(48, 48, 78);
+  border-right: 50vw solid rgb(181, 181, 181);
+  background-color: rgb(33, 34, 56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20vh;
+  color: white;
+  font-family: "Work Sans";
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 8px black;
+}
+.welcome-text > h1 {
+  width: 60%;
+}
+
+.weclome-text > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.welcome-text > div > h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+hr {
+  width: 100%;
+}
+
+/* projects page */
+
+.tech-used {
+  display: flex;
+  align-items: center;
+}
+.tech-used > img {
+  border-right: 2px solid rgb(60, 60, 60);
+  padding: 10px;
+}
+.tech-used > img:last-child {
+  border: none;
+}
+
+.projects-page {
+  height: 220vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgb(181, 181, 181), white);
+  gap: 30px;
+  border-bottom: 2px solid rgb(58, 58, 58);
+  padding-bottom: 10px;
+}
+.projects-container {
+  height: 180vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+.projects-container > div {
+  flex: 1;
+  width: 80%;
+  border-radius: 8px;
+  background-color: rgb(232, 226, 218);
+  box-shadow: 0px 0px 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  justify-content: center;
+  align-items: center;
+  font-family: "Work Sans";
+  padding: 10px;
+}
+.projects-container > div > h3 {
+  max-width: 80%;
+}
+.projects-container > div > a::after {
+  background: none;
+}
+.card-btn {
+  width: 150px;
+  height: 50px;
+  border: 2px solid transparent;
+  background-color: rgb(136, 142, 214);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.card-btn:hover {
+  border: 2px solid aqua;
+}
+
+.projects-container > div > hr {
+  width: 60%;
+}
+.projects-page > h1 {
+  color: white;
+  font-family: "Work Sans";
+}
+
+/* footer */
+
+footer {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding-bottom: 50px;
+}
+footer > img {
+  height: 100px;
+  width: 100px;
+}
+
+@media only screen and (min-width: 1080px) {
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 180vh;
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    height: 75px;
+  }
+  .nav > ul {
+    font-size: smaller;
+    gap: 0;
+  }
+  .nav > ul > li {
+    border-right: 2px solid black;
+    padding: 20px;
+  }
+  .nav > ul > li:last-child {
+    border: none;
+  }
+  .welcome-text {
+    font-size: smaller;
+  }
+
+  .card-btn {
+    height: 40px;
+    width: 80px;
+  }
+  .projects-container > div {
+    font-size: smaller;
+  }
+  .projects-container {
+    padding-bottom: 20px;
+  }
+}
