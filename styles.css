@@ -135,18 +135,18 @@ hr {
 }
 
 .projects-page {
-  height: 2500px;
+  height: 2400px;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, rgb(181, 181, 200), white);
-  gap: 30px;
   border-bottom: 2px solid rgb(58, 58, 58);
 }
 .projects-container {
   width: 100vw;
+  min-height: 2000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -206,9 +206,6 @@ hr {
   border: 2px solid aqua;
 }
 
-.projects-container > div > hr {
-  width: 60%;
-}
 .projects-page > h1 {
   color: white;
   font-family: "Work Sans";
@@ -291,6 +288,8 @@ footer > img {
   }
   .projects-container > div {
     font-size: smaller;
+    width: 75%;
+    max-height: 350px;
   }
   .projects-container {
     padding-bottom: 20px;
